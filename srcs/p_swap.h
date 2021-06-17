@@ -39,7 +39,11 @@ t_node	*a_node(int	value);
 void	append(t_node **list, t_node *node);
 
 /* tools */ 
-void	ext(char *s);
+void	ext();
+int		chk_nb(char *s);
+int		ft_atoi(const char *str);
+void	fill_stack(t_ps	*ps, char **v);
+int		instack(int nb, t_ps *ps);
 
 /* string manipulators */
 int		len(char *s);

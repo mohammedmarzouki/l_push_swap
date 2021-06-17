@@ -18,7 +18,7 @@ t_node	*a_node(int	value)
 
 	node = malloc(sizeof(t_node));
 	if (!node)
-		ext("allocation failed");
+		ext();
 	node->value = value;
 	node->next = NULL;
 	node->prev = NULL;

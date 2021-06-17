@@ -12,8 +12,27 @@
 
 #include "p_swap.h"
 
-void	ext(char *s)
+void	ext()
 {
-	print(s);
+	print("Error\n");
 	exit(1);
+}
+
+int	ft_atoi(const char *str)
+{
+	int		signe;
+	long	resultat;
+
+	resultat = 0;
+	signe = 1;
+	if (*str == '-' && ++str)
+		signe = -1;
+	while (*str >= '0' && *str <= '9')
+	{
+		resultat = resultat * 10 + *str - '0';
+		if ((resultat * signe) > 2147483647 || (resultat * signe) < -2147483648)
+			ext();
+		str++;
+	}
+	return ((int)(resultat * signe));
 }

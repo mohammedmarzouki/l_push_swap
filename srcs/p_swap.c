@@ -14,25 +14,22 @@
 
 static void	my_list(t_ps *ps)
 {
-	int a;
 	int i;
-	t_node *hold;
-	
-	a = 1;
-	
-	while(a)
+	 
+	i = -1;
+	while (++i < ps->la)
 	{
-		scanf("%d", &a);
-		append(&ps->h_a, a_node(a));
-		ps->la++;
-		hold = ps->h_a;
-		i = -1;
-		while (++i < ps->la)
-		{
-			printf("{%d}\n",hold->value);
-			hold = hold->next;
-		}
-	} 
+		printf("{%d}\n",ps->h_a->value);
+		ps->h_a = ps->h_a->next;
+	}
+}
+
+static void	init_struct(t_ps	*ps)
+{
+	ps->h_a = NULL;
+	ps->la = 0;
+	ps->lb = 0;
+	ps->h_b = NULL;
 }
 
 int	main(int c, char **v)
@@ -41,11 +38,9 @@ int	main(int c, char **v)
 	
 	(void)v;
 	if (c == 1)
-		return (0);
-	ps.h_a = NULL;
-	ps.l_a = 0;
-	ps.l_b = 0;
-	ps.h_b = NULL;
+		ext();
+	init_struct(&ps);
+	fill_stack(&ps, ++v);
 	my_list(&ps);
-	// check_dup(++v);
+	return (0);
 }
