@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:35 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/06/12 19:17:57 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/06/17 15:54:36 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,24 @@ typedef struct s_ps
 	t_node	*h_b;
 }	t_ps;
 
+/* ops */
+void    opsa(t_ps *ps);
+void    opsb(t_ps *ps);
+void    opss(t_ps *ps);
+void	oppa(t_ps *ps);
+void	oppb(t_ps *ps);
+void	opra(t_ps *ps);
+void	oprb(t_ps *ps);
+void	oprr(t_ps *ps);
+void	oprra(t_ps *ps);
+void	oprrb(t_ps *ps);
+void	oprrr(t_ps *ps);
 
 /* linked list */
 t_node	*a_node(int	value);
 void	append(t_node **list, t_node *node);
+t_node	*pop(t_node **list);
+void	insert(t_node **list, t_node *node);
 
 /* tools */ 
 void	ext();

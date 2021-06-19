@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.c                                            :+:      :+:    :+:   */
+/*   ops2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 17:58:23 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/06/19 11:28:37 by mmarzouk         ###   ########.fr       */
+/*   Created: 2021/06/17 15:48:26 by mmarzouk          #+#    #+#             */
+/*   Updated: 2021/06/17 15:56:11 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "p_swap.h"
 
-void	ext()
+void	opss(t_ps *ps)
 {
-	print("Error\n");
-	exit(1);
+	opsa(ps);
+	opsb(ps);
 }
 
-int	ft_atoi(const char *str)
+void	opra(t_ps *ps)
 {
-	int		signe;
-	long	resultat;
-
-	resultat = 0;
-	signe = 1;
-	if (*str == '-' && ++str)
-		signe = -1;
-	while (*str >= '0' && *str <= '9')
-	{
-		resultat = resultat * 10 + *str - '0';
-		if ((resultat * signe) > 2147483647 || (resultat * signe) < -2147483648)
-			ext();
-		str++;
-	}
-	return ((int)(resultat * signe));
+	if(!ps->la)
+		return ;
+	ps->h_a = ps->h_a->next;
 }
 
-void	oprrr(t_ps *ps)
+void	oprra(t_ps *ps)
 {
-	oprra(ps);
-	oprrb(ps);
+	if(!ps->la)
+		return ;
+	ps->h_a = ps->h_a->prev;
+}
+
+void	oprb(t_ps *ps)
+{
+	if(!ps->lb)
+		return ;
+	ps->h_b = ps->h_b->next;
+}
+
+void	oprrb(t_ps *ps)
+{
+	if(!ps->lb)
+		return ;
+	ps->h_b = ps->h_b->prev;
 }
