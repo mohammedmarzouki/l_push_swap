@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:35 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/06/17 15:54:36 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/07/01 06:58:27 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+# define SA 0
+# define SB 1
+# define SS 2
+# define RA 3
+# define RB 4
+# define RR 5
+# define RRA 6
+# define RRB 7
+# define RRR 8
+# define PA 9
+# define PB 10
 
 
 typedef struct	s_node
@@ -31,7 +43,15 @@ typedef struct s_ps
 	int		la;
 	int		lb;
 	t_node	*h_b;
+	void	(*op[11]) (struct s_ps*);
 }	t_ps;
+
+typedef struct	s_bfs
+{
+	int				fxi;
+	struct s_bfs	*parent;
+	struct s_bfs	*hold;
+}				t_bfs;
 
 /* ops */
 void    opsa(t_ps *ps);
@@ -52,12 +72,17 @@ void	append(t_node **list, t_node *node);
 t_node	*pop(t_node **list);
 void	insert(t_node **list, t_node *node);
 
+/* sorting */
+int		sorted(t_ps *ps);
+void    small_sort(t_ps *ps);
+
 /* tools */ 
 void	ext();
 int		chk_nb(char *s);
 int		ft_atoi(const char *str);
 void	fill_stack(t_ps	*ps, char **v);
 int		instack(int nb, t_ps *ps);
+void    arr_fx(t_ps *ps);
 
 /* string manipulators */
 int		len(char *s);

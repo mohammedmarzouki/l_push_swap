@@ -59,3 +59,21 @@ int	chk_nb(char *s)
 	num = ft_atoi(s);
 	return(num);
 }
+
+int sorted(t_ps *ps)
+{
+	int c;
+	t_node *stck;
+
+	if (ps->h_b)
+		return (0);
+	c = ps->la;
+	stck = ps->h_a;
+	while (--c)
+	{
+		if (stck->value > stck->next->value)
+			return (0);
+		stck = stck->next;
+	}
+	return (1);
+}

@@ -79,11 +79,13 @@ int	main(int c, char **v)
 {
 	t_ps ps;
 	
-	(void)v;
 	if (c == 1)
 		ext();
 	init_struct(&ps);
 	fill_stack(&ps, ++v);
-	instructions(&ps);
+	if (sorted(&ps))
+		return (0);
+	sort_it(&ps);
+	// instructions(&ps);
 	return (0);
 }
