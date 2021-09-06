@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:35 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/07/01 06:58:27 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/06 12:22:22 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define PA 9
 # define PB 10
 
+# define PRNT 11
+# define NPRNT 12
 
 typedef struct	s_node
 {
@@ -40,30 +42,30 @@ typedef struct	s_node
 typedef struct s_ps
 {
 	t_node	*h_a;
-	int		la;
+	int		la; 
 	int		lb;
 	t_node	*h_b;
-	void	(*op[11]) (struct s_ps*);
+	// void	(*op[11]) (struct s_ps*);
 }	t_ps;
 
-typedef struct	s_bfs
-{
-	int				fxi;
-	struct s_bfs	*parent;
-	struct s_bfs	*hold;
-}				t_bfs;
+// typedef struct	s_bfs
+// {
+// 	int				fxi;
+// 	struct s_bfs	*parent;
+// 	struct s_bfs	*hold;
+// }				t_bfs;
 
 /* ops */
-void    opsa(t_ps *ps);
-void    opsb(t_ps *ps);
+void    opsa(t_ps *ps, int print);
+void    opsb(t_ps *ps, int print);
 void    opss(t_ps *ps);
-void	oppa(t_ps *ps);
-void	oppb(t_ps *ps);
-void	opra(t_ps *ps);
-void	oprb(t_ps *ps);
+void	oppa(t_ps *ps, int print);
+void	oppb(t_ps *ps, int print);
+void	opra(t_ps *ps, int print);
+void	oprb(t_ps *ps, int print);
 void	oprr(t_ps *ps);
-void	oprra(t_ps *ps);
-void	oprrb(t_ps *ps);
+void	oprra(t_ps *ps, int print);
+void	oprrb(t_ps *ps, int print);
 void	oprrr(t_ps *ps);
 
 /* linked list */
@@ -75,6 +77,7 @@ void	insert(t_node **list, t_node *node);
 /* sorting */
 int		sorted(t_ps *ps);
 void    small_sort(t_ps *ps);
+void	sort_it(t_ps *ps);
 
 /* tools */ 
 void	ext();

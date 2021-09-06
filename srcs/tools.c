@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:58:23 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/06/19 11:28:37 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/06 12:20:42 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_atoi(const char *str)
 
 void	oprrr(t_ps *ps)
 {
-	oprra(ps);
-	oprrb(ps);
+	print("rrr\n");
+	oprra(ps, NPRNT);
+	oprrb(ps, NPRNT);
 }
