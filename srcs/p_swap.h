@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:35 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/06 12:22:22 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/06 16:06:18 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 typedef struct	s_node
 {
 	int				value;
+	int				index;
 	struct	s_node *next;
 	struct	s_node *prev;
 }	t_node;
@@ -78,6 +79,7 @@ void	insert(t_node **list, t_node *node);
 int		sorted(t_ps *ps);
 void    small_sort(t_ps *ps);
 void	sort_it(t_ps *ps);
+void	index_it(t_ps *ps);
 
 /* tools */ 
 void	ext();

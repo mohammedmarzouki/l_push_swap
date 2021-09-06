@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 18:07:15 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/06/17 16:25:52 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/06 13:55:43 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_node	*a_node(int	value)
 	if (!node)
 		ext();
 	node->value = value;
+	node->index = -1;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);

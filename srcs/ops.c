@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 13:51:13 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/06 12:36:17 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/06 12:47:18 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void	opsa(t_ps *ps, int prt)
 	carry = ps->h_a->value;
 	ps->h_a->value = ps->h_a->next->value;
 	ps->h_a->next->value = carry;
+	carry = ps->h_a->index;
+	ps->h_a->index = ps->h_a->next->index;
+	ps->h_a->next->index = carry;
 }
 
 void	opsb(t_ps *ps, int prt)
@@ -36,6 +39,9 @@ void	opsb(t_ps *ps, int prt)
 	carry = ps->h_b->value;
 	ps->h_b->value = ps->h_b->next->value;
 	ps->h_b->next->value = carry;
+	carry = ps->h_b->index;
+	ps->h_b->index = ps->h_b->next->index;
+	ps->h_b->next->index = carry;
 }
 
 void	oppa(t_ps *ps, int prt)
