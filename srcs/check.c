@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:54:34 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/06 13:56:04 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/08 18:28:47 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int sorted(t_ps *ps)
 	int c;
 	t_node *stck;
 
-	if (ps->h_b)
+	if (ps->lb)
 		return (0);
 	c = ps->la;
 	stck = ps->h_a;

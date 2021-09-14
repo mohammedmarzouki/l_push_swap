@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:35 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/06 16:06:18 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/08 17:48:51 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int		sorted(t_ps *ps);
 void    small_sort(t_ps *ps);
 void	sort_it(t_ps *ps);
 void	index_it(t_ps *ps);
+void	radix(t_ps *ps);
 
 /* tools */ 
 void	ext();

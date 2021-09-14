@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 13:51:13 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/06 12:47:18 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/08 18:38:11 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void	oppa(t_ps *ps, int prt)
 	insert(&ps->h_a, hold);
 	ps->la++;
 	ps->lb--;
+	if(!ps->lb)
+		ps->h_b = NULL;
 }
 
 void	oppb(t_ps *ps, int prt)
@@ -70,6 +72,8 @@ void	oppb(t_ps *ps, int prt)
 	insert(&ps->h_b, hold);
 	ps->lb++;
 	ps->la--;
+	if(!ps->la)
+		ps->h_a = NULL;
 }
 
 void	oprr(t_ps *ps)
