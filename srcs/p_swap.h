@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:35 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/08 17:48:51 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:05:23 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,12 @@ void	radix(t_ps *ps);
 
 /* tools */ 
 void	ext();
-int		chk_nb(char *s);
+int		chk_nb(char *s, t_ps	*ps);
 int		ft_atoi(const char *str);
 void	fill_stack(t_ps	*ps, char **v);
 int		instack(int nb, t_ps *ps);
 void    arr_fx(t_ps *ps);
+int		free_all(t_ps *ps);
 
 /* string manipulators */
 int		len(char *s);

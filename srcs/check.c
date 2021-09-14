@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:54:34 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/08 18:28:47 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:05:15 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	fill_stack(t_ps	*ps, char **v)
 	i = -1;
 	while (v && v[++i])
 	{
-		nb = chk_nb(v[i]);
+		nb = chk_nb(v[i], ps);
 		if (instack(nb, ps))
 			ext();
 		append(&ps->h_a, a_node(nb));
@@ -42,7 +42,7 @@ void	fill_stack(t_ps	*ps, char **v)
 	}
 }
 
-int	chk_nb(char *s)
+int	chk_nb(char *s, t_ps	*ps)
 {
 	int     i;
 	int    num;
@@ -52,7 +52,7 @@ int	chk_nb(char *s)
 		i++;
 	while(s[i])
 	{
-		if(!(s[i] >= '0' && s[i] <= '9'))
+		if(!(s[i] >= '0' && s[i] <= '9') && free_all(ps))
 			ext();
 		i++;
 	}

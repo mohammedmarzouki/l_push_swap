@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:58:23 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/08 18:50:45 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:06:26 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ext()
 {
+	system("leaks push_swap");
 	print("Error\n");
 	exit(1);
 }
