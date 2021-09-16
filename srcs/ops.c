@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 13:51:13 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/08 18:38:11 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/16 12:00:46 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	opsa(t_ps *ps, int prt)
 {
-	int carry;
+	int	carry;
 
 	if (prt == PRNT)
 		print("sa\n");
-	if(ps->la < 2)
+	if (ps->la < 2)
 		return ;
 	carry = ps->h_a->value;
 	ps->h_a->value = ps->h_a->next->value;
@@ -30,7 +30,7 @@ void	opsa(t_ps *ps, int prt)
 
 void	opsb(t_ps *ps, int prt)
 {
-	int carry;
+	int	carry;
 
 	if (prt == PRNT)
 		print("sb\n");
@@ -46,7 +46,7 @@ void	opsb(t_ps *ps, int prt)
 
 void	oppa(t_ps *ps, int prt)
 {
-	t_node *hold;
+	t_node	*hold;
 
 	if (prt == PRNT)
 		print("pa\n");
@@ -56,13 +56,13 @@ void	oppa(t_ps *ps, int prt)
 	insert(&ps->h_a, hold);
 	ps->la++;
 	ps->lb--;
-	if(!ps->lb)
+	if (!ps->lb)
 		ps->h_b = NULL;
 }
 
 void	oppb(t_ps *ps, int prt)
 {
-	t_node *hold;
+	t_node	*hold;
 
 	if (prt == PRNT)
 		print("pb\n");
@@ -72,7 +72,7 @@ void	oppb(t_ps *ps, int prt)
 	insert(&ps->h_b, hold);
 	ps->lb++;
 	ps->la--;
-	if(!ps->la)
+	if (!ps->la)
 		ps->h_a = NULL;
 }
 

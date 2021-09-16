@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:54:34 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/14 13:05:15 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/16 12:06:37 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	instack(int nb, t_ps *ps)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < ps->la)
@@ -28,8 +28,8 @@ int	instack(int nb, t_ps *ps)
 
 void	fill_stack(t_ps	*ps, char **v)
 {
-	int i;
-	int nb;
+	int	i;
+	int	nb;
 
 	i = -1;
 	while (v && v[++i])
@@ -44,26 +44,26 @@ void	fill_stack(t_ps	*ps, char **v)
 
 int	chk_nb(char *s, t_ps	*ps)
 {
-	int     i;
-	int    num;
-	
+	int	i;
+	int	num;
+
 	i = 0;
-	if(s[i] == '-' && s[i + 1])
+	if (s[i] == '-' && s[i + 1])
 		i++;
-	while(s[i])
+	while (s[i])
 	{
-		if(!(s[i] >= '0' && s[i] <= '9') && free_all(ps))
+		if (!(s[i] >= '0' && s[i] <= '9') && free_all(ps))
 			ext();
 		i++;
 	}
 	num = ft_atoi(s);
-	return(num);
+	return (num);
 }
 
-int sorted(t_ps *ps)
+int	sorted(t_ps *ps)
 {
-	int c;
-	t_node *stck;
+	int		c;
+	t_node	*stck;
 
 	if (ps->lb)
 		return (0);

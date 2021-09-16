@@ -6,16 +6,16 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:35 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/14 13:05:23 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/16 12:10:05 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef P_SWAP_H
 # define P_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 
 # define SA 0
 # define SB 1
@@ -32,34 +32,26 @@
 # define PRNT 11
 # define NPRNT 12
 
-typedef struct	s_node
+typedef struct s_node
 {
 	int				value;
 	int				index;
-	struct	s_node *next;
-	struct	s_node *prev;
+	struct s_node	*next;
+	struct s_node	*prev;
 }	t_node;
 
 typedef struct s_ps
 {
 	t_node	*h_a;
-	int		la; 
+	int		la;
 	int		lb;
 	t_node	*h_b;
-	// void	(*op[11]) (struct s_ps*);
 }	t_ps;
 
-// typedef struct	s_bfs
-// {
-// 	int				fxi;
-// 	struct s_bfs	*parent;
-// 	struct s_bfs	*hold;
-// }				t_bfs;
-
 /* ops */
-void    opsa(t_ps *ps, int print);
-void    opsb(t_ps *ps, int print);
-void    opss(t_ps *ps);
+void	opsa(t_ps *ps, int print);
+void	opsb(t_ps *ps, int print);
+void	opss(t_ps *ps);
 void	oppa(t_ps *ps, int print);
 void	oppb(t_ps *ps, int print);
 void	opra(t_ps *ps, int print);
@@ -77,18 +69,18 @@ void	insert(t_node **list, t_node *node);
 
 /* sorting */
 int		sorted(t_ps *ps);
-void    small_sort(t_ps *ps);
+void	small_sort(t_ps *ps);
 void	sort_it(t_ps *ps);
 void	index_it(t_ps *ps);
 void	radix(t_ps *ps);
 
-/* tools */ 
-void	ext();
+/* tools */
+void	ext(void);
 int		chk_nb(char *s, t_ps	*ps);
 int		ft_atoi(const char *str);
 void	fill_stack(t_ps	*ps, char **v);
 int		instack(int nb, t_ps *ps);
-void    arr_fx(t_ps *ps);
+void	arr_fx(t_ps *ps);
 int		free_all(t_ps *ps);
 
 /* string manipulators */

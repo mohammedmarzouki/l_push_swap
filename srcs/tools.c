@@ -6,13 +6,13 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:58:23 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/14 13:06:26 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/16 11:49:35 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "p_swap.h"
 
-void	ext()
+void	ext(void)
 {
 	system("leaks push_swap");
 	print("Error\n");
@@ -30,7 +30,7 @@ int	ft_atoi(const char *str)
 		signe = -1;
 	while (*str >= '0' && *str <= '9')
 	{
-		resultat = resultat * 10 + *str - '0';
+		resultat = resultat * 10 + (*str) - '0';
 		if ((resultat * signe) > 2147483647 || (resultat * signe) < -2147483648)
 			ext();
 		str++;

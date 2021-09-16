@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 17:27:45 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/14 13:05:39 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/16 11:59:12 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ static void	init_struct(t_ps	*ps)
 	ps->h_b = NULL;
 }
 
-int free_all(t_ps *ps)
+int	free_all(t_ps *ps)
 {
-	int	i;
-	t_node *nxt;
+	int		i;
+	t_node	*nxt;
 
 	i = -1;
-	while(++i < ps->la)
+	while (++i < ps->la)
 	{
 		nxt = ps->h_a->next;
 		free(ps->h_a);
@@ -37,8 +37,8 @@ int free_all(t_ps *ps)
 
 int	main(int c, char **v)
 {
-	t_ps ps;
-	
+	t_ps	ps;
+
 	if (c == 1)
 		ext();
 	init_struct(&ps);

@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 18:07:15 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/06 13:55:43 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/16 12:03:27 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_node	*a_node(int	value)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = malloc(sizeof(t_node));
 	if (!node)
@@ -28,7 +28,7 @@ t_node	*a_node(int	value)
 
 void	append(t_node **list, t_node *node)
 {
-	t_node *head;
+	t_node	*head;
 
 	if (!node || !list)
 		return ;
@@ -48,8 +48,8 @@ void	append(t_node **list, t_node *node)
 
 t_node	*pop(t_node **list)
 {
-	t_node *ret;
-	
+	t_node	*ret;
+
 	if ((!list || !*list))
 		return (NULL);
 	ret = *list;
@@ -63,7 +63,6 @@ t_node	*pop(t_node **list)
 
 void	insert(t_node **list, t_node *node)
 {
-
 	if (!node || !list)
 		return ;
 	if (!(*list))

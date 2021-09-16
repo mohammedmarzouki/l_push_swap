@@ -6,25 +6,25 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 13:02:23 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/06 17:55:27 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/16 12:04:55 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "p_swap.h"
 
-static void bubble_sort(t_node **tab, int lenth)
+static void	bubble_sort(t_node **tab, int lenth)
 {
 	t_node	*hold;
 	int		i;
 	int		j;
 
 	i = -1;
-	while(++i < lenth - 1)
+	while (++i < lenth - 1)
 	{
-		j = i; 
-		while(++j < lenth)
+		j = i;
+		while (++j < lenth)
 		{
-			if(tab[i]->value > tab[j]->value)
+			if (tab[i]->value > tab[j]->value)
 			{
 				hold = tab[i];
 				tab[i] = tab[j];
@@ -49,7 +49,7 @@ void	index_it(t_ps *ps)
 		hold = hold->next;
 	}
 	bubble_sort(tab, ps->la);
-	while(++count < ps->la)
+	while (++count < ps->la)
 		tab[count]->index = count;
 	free(tab);
 }

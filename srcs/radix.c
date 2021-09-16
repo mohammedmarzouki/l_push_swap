@@ -6,7 +6,7 @@
 /*   By: mmarzouk <mmarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 17:42:03 by mmarzouk          #+#    #+#             */
-/*   Updated: 2021/09/08 18:50:03 by mmarzouk         ###   ########.fr       */
+/*   Updated: 2021/09/16 11:54:59 by mmarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	radix(t_ps *ps)
 	int	i;
 	int	j;
 	int	hold;
-	int lenght;
+	int	lenght;
 
 	i = -1;
 	while (!sorted(ps))
